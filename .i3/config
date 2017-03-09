@@ -95,29 +95,36 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindcode $mod+d focus child
 
+# move workspace to diffrent screen
+bindsym $mod+bracketright move workspace to output right
+bindsym $mod+bracketleft move workspace to output left
+
 # switch to workspace
 bindsym $mod+1 workspace 1: [term]
 bindsym $mod+2 workspace 2: [web]
-bindsym $mod+3 workspace 3: [irc]
+bindsym $mod+3 workspace 3: [dev]
 bindsym $mod+4 workspace 4: [vim]
-bindsym $mod+5 workspace 5: [media]
-bindsym $mod+6 workspace 6: [mail]
-bindsym $mod+7 workspace 7: [feed]
+bindsym $mod+5 workspace 5: [skype]
+bindsym $mod+6 workspace 6: [irc]
+bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
-#browser se startuje sa start+w
-bindsym $mod+W exec "chromium --incognito"
+#browser start
+bindsym $mod+W exec "chromium-browser"
+
+#sublime start
+bindsym $mod+p exec "subl"
 
 # move focused container to workspace
 bindsym $mod+Shift+exclam move workspace 1: [term]
 bindsym $mod+Shift+at move workspace 2: [web]
-bindsym $mod+Shift+numbersign move workspace 3: [irc]
+bindsym $mod+Shift+numbersign move workspace 3: [dev]
 bindsym $mod+Shift+dollar move workspace 4: [vim]
-bindsym $mod+Shift+percent move workspace 5: [media]
-bindsym $mod+Shift+asciicircum move workspace 6: [mail]
-bindsym $mod+Shift+ampersand move workspace 7: [feed]
+bindsym $mod+Shift+percent move workspace 5: [skype]
+bindsym $mod+Shift+asciicircum move workspace 6: [irc]
+bindsym $mod+Shift+ampersand move workspace 7
 bindsym $mod+Shift+asterisk move workspace 8
 bindsym $mod+Shift+parenleft move workspace 9
 bindsym $mod+Shift+parenright move workspace 10
@@ -216,9 +223,18 @@ bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ 
 bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '+5%'
 bindsym XF86AudioMute exec /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+#===============
+# Startup apps ||
+#===============
 
-#startup apps
-exec feh --bg-scale ~/.i3/wallpapers/ai.jpg
+#setup background
+#exec feh --bg-scale ~/.i3/wallpapers/ai.jpg
+
+#Run term
+exec --no-startup-id i3-msg 'workspace 1: [term]; exec gnome-terminal'
+
+#Run skype
+exec --no-startup-id i3-msg 'workspace 5: [skype]; exec skype'
 
 # Theme
 
