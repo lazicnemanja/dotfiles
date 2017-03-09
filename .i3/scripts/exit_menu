@@ -1,8 +1,10 @@
 #!/bin/bash
-while [ "$select" != "Lock" -a "$select" != "Logout" -a "$select" != "Shutdown"  ]; do
-    select=$(echo -e 'Lock\nLogout\nShutdown' | dmenu -nb '#2f343f' -nf '#f3f4f5' -sb '#9575cd' -sf '#f3f4f5' -fn '-*-*-medium-r-normal-*-*-*-*-*-*-100-*-*' -i -p "Select option:")
+while [ "$select" != " Lock" -a "$select" != " Logout" -a "$select" != " Shutdown"  ]; do
+
+select=$(echo -e ' Lock\n Logout\n Shutdown' | 
+rofi -dmenu -p "" -show run -lines 3 -eh 2 -padding 50 -font "Ubuntu mono 18" -bg "#272635" -fg "#E8E9F3" -bgalt "#272635" -hlfg "#272635" -hlbg "#CECECE" -border "#000fff")
     [ -z "$select" ] && exit 0
 done
-[ "$select" = "Lock" ] && i3lock -c "#000000" -i ~/.i3/wallpapers/lockscreen.png
-[ "$select" = "Logout" ] && i3-msg exit
-[ "$select" = "Shutdown" ] && systemctl poweroff
+[ "$select" = " Lock" ] && i3lock -c "#000000" -i ~/.i3/wallpapers/lockscreen.png
+[ "$select" = " Logout" ] && i3-msg exit
+[ "$select" = " Shutdown" ] && systemctl poweroff
