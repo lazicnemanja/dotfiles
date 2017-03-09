@@ -14,8 +14,6 @@ set $mod Mod4
 # font for window titles. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
-
-
 # Windows definitions global
 
 default_orientation horizontal
@@ -24,12 +22,6 @@ new_window 1pixel
 
 # window colours: border background text
 client.background               #101010
-
-
-
-# end
-
-
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 
