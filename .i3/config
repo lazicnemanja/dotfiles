@@ -77,6 +77,12 @@ bindsym $mod+e layout default
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
+# toggle touchpad
+bindsym $mod+F8 exec ~/.i3/scripts/toggle_touchpad.sh
+
+# lock screan
+bindsym $mod+F2 exec i3lock -c "#000000" -i ~/.i3/wallpapers/lockscreen.png
+
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
