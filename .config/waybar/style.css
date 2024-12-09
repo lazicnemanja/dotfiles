@@ -1,0 +1,119 @@
+@import "colors.css"; 
+
+* {
+    font-family: "MesloLGS Nerd Font Mono";
+    font-size: 12px;
+    min-height: 0;
+    font-weight: normal;
+}
+
+window#waybar {
+    background: transparent;
+    background-color: transparent;
+    color: @overlay;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+}
+
+#window {
+    margin: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+button {
+    color: #a7c4c2;
+}
+
+button:hover {
+    background: inherit;
+}
+
+#workspaces {
+    padding: 5px;
+}
+
+#workspaces button{
+    border-radius:1rem;
+    background-color: rgba(0,0,0,0.7);
+
+    color: #f7f7ff;
+    padding: 2px;
+    margin: 0 4px;
+}
+
+#workspaces button.focused {
+    background-color: rgba(255,255,255,0.9);
+    color: black;
+}
+
+#workspaces button.active {
+    background-color: rgba(255,255,255,0.9);
+    color: black;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+#window {
+    background-color: rgba(255,255,255,0.9);
+    color: black;
+    padding: 0 15px;
+    border-radius:1rem;
+    font-size: 10px;
+}
+
+#pulseaudio,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#wireplumber,
+#network,
+#mode,
+#custom-wttr,
+#scratchpad {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border-radius: 1rem;
+    background-color: rgba(0,0,0,0.6);
+    color: #a7c4c2;
+}
+
+#pulseaudio:hover { color: #93efe9; }
+#clock:hover { 
+    background-color: rgba(0,0,0,0.7);
+    color: #f7f7ff;
+}
+
+
+#battery:hover { color: #93efe9; }
+#cpu:hover { color: #93efe9; }
+#memory:hover { color: #93efe9; }
+#disk:hover { color: #93efe9; }
+#temperature:hover { color: #93efe9; }
+#backlight:hover { color: #93efe9; }
+#wireplumber:hover { color: #93efe9; }
+#tray:hover { color: #93efe9; }
+#network:hover { color: #93efe9; }
+#mode:hover { color: #93efe9; }
+#custom-wttr:hover { color: #93efe9; }
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 5px;
+}
+
