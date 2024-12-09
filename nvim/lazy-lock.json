@@ -20,6 +20,7 @@
   "nvim-lspconfig": { "branch": "master", "commit": "eb36e0185ad4b92b0999fb698428f2966334d2c1" },
   "nvim-treesitter": { "branch": "master", "commit": "4d94c24d6cb9985347bdf0692c1fd81088c6c8b2" },
   "plenary.nvim": { "branch": "master", "commit": "f4faa5a3dc77a694ba58f42585985fed88540ac6" },
+  "snacks.nvim": { "branch": "main", "commit": "9651a931043359fcc094ab5c67ac22554a602745" },
   "supermaven-nvim": { "branch": "main", "commit": "7698b982ae96a5decca84219390e273bd428dc86" },
   "tailwind-tools.nvim": { "branch": "master", "commit": "41e901e7b4470082b5388b8385249632642c2510" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b" },
