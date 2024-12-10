@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# round the left side of the prompt
+ROUNDED=false
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -39,11 +42,16 @@ emoticons=(💀 🐧 🐋 🍺 🚀 🌍 ⚓ 💣)
 random_index=$((RANDOM % ${#emoticons[@]}))
 random_emoticon=${emoticons[$random_index]}
 
+Separator=''
+if $ROUNDED; then
+    Separator='◗'
+fi
+
 PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'
-PS1_A='⚓ \[\e[38;5;232;48;5;226m\] \[\e[0m\]'
-PS1_B='\[\e[38;5;232;48;5;226m\]\u/\h\[\e[0m\]\[\e[38;5;226;48;5;210m\]\[\e[0m\]'
-PS1_C='\[\e[38;5;232;48;5;210m\]${PS1_CMD1}\[\e[0m\]\[\e[38;5;210;48;5;105m\] \[\e[0m\]'
-PS1_D='\[\e[30;48;5;105m\]\w\[\e[0m\]\[\e[38;5;105m\] \[\e[0m\]'
+PS1_A='\[\e[97;40m\] ⚓ \[\e[30;48;5;226m\]${Separator} \[\e[0m\]'
+PS1_B='\[\e[38;5;232;48;5;226m\]\u/\h\[\e[0m\]\[\e[38;5;226;48;5;210m\]${Separator}\[\e[0m\]'
+PS1_C='\[\e[38;5;232;48;5;210m\] ${PS1_CMD1}\[\e[0m\]\[\e[38;5;210;48;5;105m\]${Separator} \[\e[0m\]'
+PS1_D='\[\e[30;48;5;105m\]\w\[\e[0m\]\[\e[38;5;105m\]${Separator} \[\e[0m\]'
 
 PS1="${PS1_A}${PS1_B}${PS1_C}${PS1_D}"
 
